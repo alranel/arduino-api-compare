@@ -73,8 +73,8 @@ This document compares the API of the following libraries:
 | `IPAddress`          | `calculateNetworkID(IPAddress ip, IPAddress subnet)`                                                                                                                                                                                                                                                                                 |                |           | ✔️                 |
 | `uint8_t`            | `calculateSubnetCIDR(IPAddress subnetMask)`                                                                                                                                                                                                                                                                                          |                |           | ✔️                 |
 | `int32_t`            | `channel()`                                                                                                                                                                                                                                                                                                                          |                |           | ✔️                 |
-| `void`               | `config(IPAddress local_ip)`                                                                                                                                                                                                                                                                                                         | ✔️             | ✔️        |                    |
 | `void`               | `config(const char * local_ip)`                                                                                                                                                                                                                                                                                                      | ✔️             | ✔️        |                    |
+| `void`               | `config(IPAddress local_ip)`                                                                                                                                                                                                                                                                                                         | ✔️             | ✔️        |                    |
 | `void`               | `config(IPAddress local_ip, IPAddress dns_server)`                                                                                                                                                                                                                                                                                   | ✔️             | ✔️        |                    |
 | `bool`               | `config(IPAddress local_ip, IPAddress gateway, IPAddress subnet, IPAddress dns1 = (uint32_t) 0x00000000, IPAddress dns2 = (uint32_t) 0x00000000)`                                                                                                                                                                                    |                |           | ✔️                 |
 | `bool`               | `disconnect(bool wifioff = false, bool eraseap = false)`                                                                                                                                                                                                                                                                             |                |           | ✔️                 |
@@ -111,13 +111,13 @@ This document compares the API of the following libraries:
 | `bool`               | `mode(wifi_mode_t )`                                                                                                                                                                                                                                                                                                                 |                |           | ✔️                 |
 | `IPAddress`          | `networkID()`                                                                                                                                                                                                                                                                                                                        |                |           | ✔️                 |
 | `void`               | `noLowPowerMode()`                                                                                                                                                                                                                                                                                                                   | ✔️             | ✔️        |                    |
-| `wifi_event_id_t`    | `onEvent(WiFiEventCb cbEvent, arduino_event_id_t event)`                                                                                                                                                                                                                                                                             |                |           | ✔️                 |
-| `wifi_event_id_t`    | `onEvent(WiFiEventFuncCb cbEvent, arduino_event_id_t event)`                                                                                                                                                                                                                                                                         |                |           | ✔️                 |
 | `wifi_event_id_t`    | `onEvent(WiFiEventSysCb cbEvent, arduino_event_id_t event)`                                                                                                                                                                                                                                                                          |                |           | ✔️                 |
+| `wifi_event_id_t`    | `onEvent(WiFiEventFuncCb cbEvent, arduino_event_id_t event)`                                                                                                                                                                                                                                                                         |                |           | ✔️                 |
+| `wifi_event_id_t`    | `onEvent(WiFiEventCb cbEvent, arduino_event_id_t event)`                                                                                                                                                                                                                                                                             |                |           | ✔️                 |
 | `void`               | `persistent(bool persistent)`                                                                                                                                                                                                                                                                                                        |                |           | ✔️                 |
-| `int`                | `ping(const char * hostname, uint8_t ttl = 128)`                                                                                                                                                                                                                                                                                     | ✔️             | ✔️        |                    |
-| `int`                | `ping(const  &String hostname, uint8_t ttl = 128)`                                                                                                                                                                                                                                                                                   | ✔️             | ✔️        |                    |
 | `int`                | `ping(IPAddress host, uint8_t ttl = 128)`                                                                                                                                                                                                                                                                                            | ✔️             | ✔️        |                    |
+| `int`                | `ping(const  &String hostname, uint8_t ttl = 128)`                                                                                                                                                                                                                                                                                   | ✔️             | ✔️        |                    |
+| `int`                | `ping(const char * hostname, uint8_t ttl = 128)`                                                                                                                                                                                                                                                                                     | ✔️             | ✔️        |                    |
 | `void`               | `printDiag(&Print dest)`                                                                                                                                                                                                                                                                                                             |                |           | ✔️                 |
 | `String`             | `psk()`                                                                                                                                                                                                                                                                                                                              |                |           | ✔️                 |
 | `uint8_t`            | `reasonCode()`                                                                                                                                                                                                                                                                                                                       | ✔️             |           |                    |
@@ -133,8 +133,8 @@ This document compares the API of the following libraries:
 | `void`               | `setDNS(IPAddress dns_server1)`                                                                                                                                                                                                                                                                                                      | ✔️             | ✔️        |                    |
 | `void`               | `setDNS(IPAddress dns_server1, IPAddress dns_server2)`                                                                                                                                                                                                                                                                               | ✔️             | ✔️        |                    |
 | `bool`               | `setDualAntennaConfig(uint8_t gpio_ant1, uint8_t gpio_ant2, wifi_rx_ant_t rx_mode, wifi_tx_ant_t tx_mode)`                                                                                                                                                                                                                           |                |           | ✔️                 |
-| `void`               | `setFeedWatchdogFunc(FeedHostProcessorWatchdogFuncPointer func)`                                                                                                                                                                                                                                                                     | ✔️             | ✔️        |                    |
 | `void`               | `setFeedWatchdogFunc(voidFuncPtr func)`                                                                                                                                                                                                                                                                                              | ✔️             | ✔️        |                    |
+| `void`               | `setFeedWatchdogFunc(FeedHostProcessorWatchdogFuncPointer func)`                                                                                                                                                                                                                                                                     | ✔️             | ✔️        |                    |
 | `void`               | `setMinSecurity(wifi_auth_mode_t minSecurity)`                                                                                                                                                                                                                                                                                       |                |           | ✔️                 |
 | `void`               | `setScanMethod(wifi_scan_method_t scanMethod)`                                                                                                                                                                                                                                                                                       |                |           | ✔️                 |
 | `bool`               | `setSleep(wifi_ps_type_t sleepType)`                                                                                                                                                                                                                                                                                                 |                |           | ✔️                 |
@@ -172,17 +172,17 @@ This document compares the API of the following libraries:
 |                 | **Fully compatible**                                                                          |          |          |                      |
 | `int`           | `available()`                                                                                 | ✔️       | ✔️       | ✔️                   |
 | `void`          | `clearWriteError()`                                                                           | ✔️       | ✔️       | ✔️                   |
-| `int`           | `connect(const char * host, uint16_t port)`                                                   | ✔️       | ✔️       | ✔️                   |
 | `int`           | `connect(IPAddress ip, uint16_t port)`                                                        | ✔️       | ✔️       | ✔️                   |
+| `int`           | `connect(const char * host, uint16_t port)`                                                   | ✔️       | ✔️       | ✔️                   |
 | `uint8_t`       | `connected()`                                                                                 | ✔️       | ✔️       | ✔️                   |
-| `bool`          | `find(uint8_t * target)`                                                                      | ✔️       | ✔️       | ✔️                   |
-| `bool`          | `find(const uint8_t * target)`                                                                | ✔️       | ✔️       | ✔️                   |
 | `bool`          | `find(char target)`                                                                           | ✔️       | ✔️       | ✔️                   |
+| `bool`          | `find(const uint8_t * target)`                                                                | ✔️       | ✔️       | ✔️                   |
 | `bool`          | `find(const char * target)`                                                                   | ✔️       | ✔️       | ✔️                   |
+| `bool`          | `find(uint8_t * target)`                                                                      | ✔️       | ✔️       | ✔️                   |
 | `bool`          | `find(const char * target, size_t length)`                                                    | ✔️       | ✔️       | ✔️                   |
 | `bool`          | `find(const uint8_t * target, size_t length)`                                                 | ✔️       | ✔️       | ✔️                   |
-| `bool`          | `findUntil(const uint8_t * target, const char * terminator)`                                  | ✔️       | ✔️       | ✔️                   |
 | `bool`          | `findUntil(const char * target, const char * terminator)`                                     | ✔️       | ✔️       | ✔️                   |
+| `bool`          | `findUntil(const uint8_t * target, const char * terminator)`                                  | ✔️       | ✔️       | ✔️                   |
 | `bool`          | `findUntil(const char * target, size_t targetLen, const char * terminate, size_t termLen)`    | ✔️       | ✔️       | ✔️                   |
 | `bool`          | `findUntil(const uint8_t * target, size_t targetLen, const char * terminate, size_t termLen)` | ✔️       | ✔️       | ✔️                   |
 | `void`          | `flush()`                                                                                     | ✔️       | ✔️       | ✔️                   |
@@ -190,67 +190,67 @@ This document compares the API of the following libraries:
 | `int`           | `getWriteError()`                                                                             | ✔️       | ✔️       | ✔️                   |
 |                 | `operator bool()`                                                                             | ✔️       | ✔️       | ✔️                   |
 | `int`           | `peek()`                                                                                      | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `print(const __FlashStringHelper * )`                                                         | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `print(char )`                                                                                | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `print(const  &String )`                                                                      | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `print(const char )`                                                                          | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `print(char )`                                                                                | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `print(const __FlashStringHelper * )`                                                         | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `print(const  &Printable )`                                                                   | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `print(double , int  = 2)`                                                                    | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `print(unsigned char , int  = 10)`                                                            | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `print(unsigned int , int  = 10)`                                                             | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `print(long , int  = 10)`                                                                     | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `print(long long , int  = 10)`                                                                | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `print(unsigned long , int  = 10)`                                                            | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `print(unsigned long long , int  = 10)`                                                       | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `print(double , int  = 2)`                                                                    | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `print(struct tm * timeinfo, const char * format = NULL)`                                     | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `print(long , int  = 10)`                                                                     | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `print(unsigned char , int  = 10)`                                                            | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `print(unsigned long long , int  = 10)`                                                       | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `print(int , int  = 10)`                                                                      | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `print(unsigned int , int  = 10)`                                                             | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `println()`                                                                                   | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `println(const  &String s)`                                                                   | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `println(const  &Printable )`                                                                 | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `println(const char )`                                                                        | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `println(const __FlashStringHelper * )`                                                       | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `println(const char )`                                                                        | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `println(const  &Printable )`                                                                 | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `println(const  &String s)`                                                                   | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `println(char )`                                                                              | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `println(unsigned long , int  = 10)`                                                          | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `println(struct tm * timeinfo, const char * format = NULL)`                                   | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `println(long long , int  = 10)`                                                              | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `println(double , int  = 2)`                                                                  | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `println(long , int  = 10)`                                                                   | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `println(unsigned char , int  = 10)`                                                          | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `println(int , int  = 10)`                                                                    | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `println(unsigned long long , int  = 10)`                                                     | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `println(struct tm * timeinfo, const char * format = NULL)`                                   | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `println(unsigned int , int  = 10)`                                                           | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `println(unsigned long , int  = 10)`                                                          | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `println(unsigned long long , int  = 10)`                                                     | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `println(int , int  = 10)`                                                                    | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `println(unsigned char , int  = 10)`                                                          | ✔️       | ✔️       | ✔️                   |
 | `int`           | `read()`                                                                                      | ✔️       | ✔️       | ✔️                   |
 | `int`           | `read(uint8_t * buf, size_t size)`                                                            | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `readBytes(uint8_t * buffer, size_t length)`                                                  | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `readBytes(char * buffer, size_t length)`                                                     | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `readBytesUntil(char terminator, char * buffer, size_t length)`                               | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `readBytesUntil(char terminator, uint8_t * buffer, size_t length)`                            | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `readBytesUntil(char terminator, char * buffer, size_t length)`                               | ✔️       | ✔️       | ✔️                   |
 | `String`        | `readString()`                                                                                | ✔️       | ✔️       | ✔️                   |
 | `String`        | `readStringUntil(char terminator)`                                                            | ✔️       | ✔️       | ✔️                   |
 | `IPAddress`     | `remoteIP()`                                                                                  | ✔️       | ✔️       | ✔️                   |
 | `uint16_t`      | `remotePort()`                                                                                | ✔️       | ✔️       | ✔️                   |
 | `void`          | `setTimeout(unsigned long timeout)`                                                           | ✔️       | ✔️       | ✔️                   |
 | `void`          | `stop()`                                                                                      | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `write(uint8_t data)`                                                                         | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `write(&Stream stream)`                                                                       | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `write(const char * str)`                                                                     | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `write(uint8_t )`                                                                             | ✔️       | ✔️       | ✔️                   |
-| `size_t`        | `write(const uint8_t * buffer, size_t size)`                                                  | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `write(const char * str)`                                                                     | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `write(&Stream stream)`                                                                       | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `write(uint8_t data)`                                                                         | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `write(const char * buffer, size_t size)`                                                     | ✔️       | ✔️       | ✔️                   |
+| `size_t`        | `write(const uint8_t * buffer, size_t size)`                                                  | ✔️       | ✔️       | ✔️                   |
 | `size_t`        | `write(const uint8_t * buf, size_t size)`                                                     | ✔️       | ✔️       | ✔️                   |
 |                 | **Differing return values**                                                                   |          |          |                      |
 |                 | `availableForWrite()`                                                                         | `int`    | `int`    | `size_t virtual int` |
 |                 | `setTimeout(uint32_t seconds)`                                                                | `void`   | `void`   | `int`                |
 |                 | **Limited compatibility**                                                                     |          |          |                      |
 |                 | `WiFiClient()`                                                                                | ✔️       |          | ✔️                   |
-|                 | `WiFiClient(int fd)`                                                                          | ✔️       |          | ✔️                   |
 |                 | `WiFiClient(uint8_t sock)`                                                                    | ✔️       |          | ✔️                   |
+|                 | `WiFiClient(int fd)`                                                                          | ✔️       |          | ✔️                   |
 | `void`          | `configureSocket(Socket * _s)`                                                                |          | ✔️       |                      |
 | `int`           | `connect(SocketAddress socketAddress)`                                                        |          | ✔️       |                      |
-| `int`           | `connect(const char * host, uint16_t port, int32_t timeout)`                                  |          |          | ✔️                   |
 | `int`           | `connect(IPAddress ip, uint16_t port, int32_t timeout)`                                       |          |          | ✔️                   |
-| `int`           | `connectBearSSL(IPAddress ip, uint16_t port)`                                                 | ✔️       |          |                      |
+| `int`           | `connect(const char * host, uint16_t port, int32_t timeout)`                                  |          |          | ✔️                   |
 | `int`           | `connectBearSSL(const char * host, uint16_t port)`                                            | ✔️       |          |                      |
+| `int`           | `connectBearSSL(IPAddress ip, uint16_t port)`                                                 | ✔️       |          |                      |
 | `int`           | `connectSSL(SocketAddress socketAddress)`                                                     |          | ✔️       |                      |
 | `int`           | `connectSSL(const char * host, uint16_t port)`                                                | ✔️       | ✔️       |                      |
 | `int`           | `connectSSL(IPAddress ip, uint16_t port)`                                                     | ✔️       | ✔️       |                      |
@@ -263,12 +263,12 @@ This document compares the API of the following libraries:
 | `IPAddress`     | `localIP(int fd)`                                                                             |          |          | ✔️                   |
 | `uint16_t`      | `localPort()`                                                                                 |          |          | ✔️                   |
 | `uint16_t`      | `localPort(int fd)`                                                                           |          |          | ✔️                   |
-| `bool`          | `operator!=(const  &WiFiClient rhs)`                                                          |          |          | ✔️                   |
 | `bool`          | `operator!=(const bool value)`                                                                |          |          | ✔️                   |
-| ` &MbedClient`  | `operator=(const  &MbedClient orig)`                                                          |          | ✔️       | ✔️                   |
+| `bool`          | `operator!=(const  &WiFiClient rhs)`                                                          |          |          | ✔️                   |
 | ` &WiFiClient`  | `operator=(const  &WiFiClient other)`                                                         |          | ✔️       | ✔️                   |
-| `bool`          | `operator==(const  &WiFiClient )`                                                             |          |          | ✔️                   |
+| ` &MbedClient`  | `operator=(const  &MbedClient orig)`                                                          |          | ✔️       | ✔️                   |
 | `bool`          | `operator==(const bool value)`                                                                |          |          | ✔️                   |
+| `bool`          | `operator==(const  &WiFiClient )`                                                             |          |          | ✔️                   |
 | `float`         | `parseFloat()`                                                                                |          |          | ✔️                   |
 | `float`         | `parseFloat(LookaheadMode lookahead, char ignore = '\x01')`                                   | ✔️       | ✔️       |                      |
 | `long`          | `parseInt()`                                                                                  |          |          | ✔️                   |
@@ -309,15 +309,15 @@ This document compares the API of the following libraries:
 | `int`           | `connectSSL(const char * host, uint16_t port, bool disableSNI = false)`                       |          | ✔️       |       |
 | `uint8_t`       | `connected()`                                                                                 | ✔️       | ✔️       |       |
 | `void`          | `disableSNI(bool statusSNI)`                                                                  |          | ✔️       |       |
-| `bool`          | `find(const uint8_t * target)`                                                                | ✔️       | ✔️       |       |
 | `bool`          | `find(char target)`                                                                           | ✔️       | ✔️       |       |
+| `bool`          | `find(const uint8_t * target)`                                                                | ✔️       | ✔️       |       |
 | `bool`          | `find(const char * target)`                                                                   | ✔️       | ✔️       |       |
-| `bool`          | `find(const uint8_t * target, size_t length)`                                                 | ✔️       | ✔️       |       |
 | `bool`          | `find(const char * target, size_t length)`                                                    | ✔️       | ✔️       |       |
-| `bool`          | `findUntil(const uint8_t * target, const char * terminator)`                                  | ✔️       | ✔️       |       |
+| `bool`          | `find(const uint8_t * target, size_t length)`                                                 | ✔️       | ✔️       |       |
 | `bool`          | `findUntil(const char * target, const char * terminator)`                                     | ✔️       | ✔️       |       |
-| `bool`          | `findUntil(const char * target, size_t targetLen, const char * terminate, size_t termLen)`    | ✔️       | ✔️       |       |
+| `bool`          | `findUntil(const uint8_t * target, const char * terminator)`                                  | ✔️       | ✔️       |       |
 | `bool`          | `findUntil(const uint8_t * target, size_t targetLen, const char * terminate, size_t termLen)` | ✔️       | ✔️       |       |
+| `bool`          | `findUntil(const char * target, size_t targetLen, const char * terminate, size_t termLen)`    | ✔️       | ✔️       |       |
 | `void`          | `flush()`                                                                                     | ✔️       | ✔️       |       |
 | `Socket *`      | `getSocket()`                                                                                 |          | ✔️       |       |
 | `unsigned long` | `getTimeout()`                                                                                | ✔️       | ✔️       |       |
@@ -328,38 +328,38 @@ This document compares the API of the following libraries:
 | `long`          | `parseInt(LookaheadMode lookahead, char ignore = '\x01')`                                     | ✔️       | ✔️       |       |
 | `int`           | `peek()`                                                                                      | ✔️       | ✔️       |       |
 | `size_t`        | `print(const  &Printable )`                                                                   | ✔️       | ✔️       |       |
-| `size_t`        | `print(const  &String )`                                                                      | ✔️       | ✔️       |       |
+| `size_t`        | `print(const __FlashStringHelper * )`                                                         | ✔️       | ✔️       |       |
 | `size_t`        | `print(const char )`                                                                          | ✔️       | ✔️       |       |
 | `size_t`        | `print(char )`                                                                                | ✔️       | ✔️       |       |
-| `size_t`        | `print(const __FlashStringHelper * )`                                                         | ✔️       | ✔️       |       |
-| `size_t`        | `print(unsigned int , int  = 10)`                                                             | ✔️       | ✔️       |       |
-| `size_t`        | `print(int , int  = 10)`                                                                      | ✔️       | ✔️       |       |
-| `size_t`        | `print(double , int  = 2)`                                                                    | ✔️       | ✔️       |       |
+| `size_t`        | `print(const  &String )`                                                                      | ✔️       | ✔️       |       |
 | `size_t`        | `print(unsigned char , int  = 10)`                                                            | ✔️       | ✔️       |       |
-| `size_t`        | `print(unsigned long , int  = 10)`                                                            | ✔️       | ✔️       |       |
-| `size_t`        | `print(long , int  = 10)`                                                                     | ✔️       | ✔️       |       |
 | `size_t`        | `print(long long , int  = 10)`                                                                | ✔️       | ✔️       |       |
+| `size_t`        | `print(unsigned long , int  = 10)`                                                            | ✔️       | ✔️       |       |
+| `size_t`        | `print(double , int  = 2)`                                                                    | ✔️       | ✔️       |       |
 | `size_t`        | `print(unsigned long long , int  = 10)`                                                       | ✔️       | ✔️       |       |
+| `size_t`        | `print(int , int  = 10)`                                                                      | ✔️       | ✔️       |       |
+| `size_t`        | `print(long , int  = 10)`                                                                     | ✔️       | ✔️       |       |
+| `size_t`        | `print(unsigned int , int  = 10)`                                                             | ✔️       | ✔️       |       |
 | `size_t`        | `println()`                                                                                   | ✔️       | ✔️       |       |
-| `size_t`        | `println(char )`                                                                              | ✔️       | ✔️       |       |
-| `size_t`        | `println(const  &String s)`                                                                   | ✔️       | ✔️       |       |
-| `size_t`        | `println(const __FlashStringHelper * )`                                                       | ✔️       | ✔️       |       |
-| `size_t`        | `println(const char )`                                                                        | ✔️       | ✔️       |       |
 | `size_t`        | `println(const  &Printable )`                                                                 | ✔️       | ✔️       |       |
+| `size_t`        | `println(char )`                                                                              | ✔️       | ✔️       |       |
+| `size_t`        | `println(const __FlashStringHelper * )`                                                       | ✔️       | ✔️       |       |
+| `size_t`        | `println(const  &String s)`                                                                   | ✔️       | ✔️       |       |
+| `size_t`        | `println(const char )`                                                                        | ✔️       | ✔️       |       |
+| `size_t`        | `println(unsigned long long , int  = 10)`                                                     | ✔️       | ✔️       |       |
+| `size_t`        | `println(long long , int  = 10)`                                                              | ✔️       | ✔️       |       |
+| `size_t`        | `println(unsigned char , int  = 10)`                                                          | ✔️       | ✔️       |       |
+| `size_t`        | `println(double , int  = 2)`                                                                  | ✔️       | ✔️       |       |
 | `size_t`        | `println(int , int  = 10)`                                                                    | ✔️       | ✔️       |       |
 | `size_t`        | `println(unsigned long , int  = 10)`                                                          | ✔️       | ✔️       |       |
-| `size_t`        | `println(unsigned char , int  = 10)`                                                          | ✔️       | ✔️       |       |
-| `size_t`        | `println(unsigned int , int  = 10)`                                                           | ✔️       | ✔️       |       |
-| `size_t`        | `println(long long , int  = 10)`                                                              | ✔️       | ✔️       |       |
-| `size_t`        | `println(double , int  = 2)`                                                                  | ✔️       | ✔️       |       |
 | `size_t`        | `println(long , int  = 10)`                                                                   | ✔️       | ✔️       |       |
-| `size_t`        | `println(unsigned long long , int  = 10)`                                                     | ✔️       | ✔️       |       |
+| `size_t`        | `println(unsigned int , int  = 10)`                                                           | ✔️       | ✔️       |       |
 | `int`           | `read()`                                                                                      | ✔️       | ✔️       |       |
 | `int`           | `read(uint8_t * buf, size_t size)`                                                            | ✔️       | ✔️       |       |
-| `size_t`        | `readBytes(uint8_t * buffer, size_t length)`                                                  | ✔️       | ✔️       |       |
 | `size_t`        | `readBytes(char * buffer, size_t length)`                                                     | ✔️       | ✔️       |       |
-| `size_t`        | `readBytesUntil(char terminator, char * buffer, size_t length)`                               | ✔️       | ✔️       |       |
+| `size_t`        | `readBytes(uint8_t * buffer, size_t length)`                                                  | ✔️       | ✔️       |       |
 | `size_t`        | `readBytesUntil(char terminator, uint8_t * buffer, size_t length)`                            | ✔️       | ✔️       |       |
+| `size_t`        | `readBytesUntil(char terminator, char * buffer, size_t length)`                               | ✔️       | ✔️       |       |
 | `String`        | `readString()`                                                                                | ✔️       | ✔️       |       |
 | `String`        | `readStringUntil(char terminator)`                                                            | ✔️       | ✔️       |       |
 | `IPAddress`     | `remoteIP()`                                                                                  | ✔️       | ✔️       |       |
@@ -372,9 +372,9 @@ This document compares the API of the following libraries:
 | `void`          | `stop()`                                                                                      | ✔️       | ✔️       |       |
 | `size_t`        | `write(uint8_t )`                                                                             | ✔️       | ✔️       |       |
 | `size_t`        | `write(const char * str)`                                                                     | ✔️       | ✔️       |       |
-| `size_t`        | `write(const uint8_t * buffer, size_t size)`                                                  | ✔️       | ✔️       |       |
-| `size_t`        | `write(const uint8_t * buf, size_t size)`                                                     | ✔️       | ✔️       |       |
 | `size_t`        | `write(const char * buffer, size_t size)`                                                     | ✔️       | ✔️       |       |
+| `size_t`        | `write(const uint8_t * buf, size_t size)`                                                     | ✔️       | ✔️       |       |
+| `size_t`        | `write(const uint8_t * buffer, size_t size)`                                                  | ✔️       | ✔️       |       |
 
 ## WiFiServer
 
@@ -385,19 +385,19 @@ This document compares the API of the following libraries:
 |                      | `WiFiServer(uint16_t )`                                                           | ✔️       | ✔️       | ✔️     |
 | `WiFiClient`         | `available()`                                                                     | ✔️       | ✔️       | ✔️     |
 | `void`               | `begin()`                                                                         | ✔️       | ✔️       | ✔️     |
-| `size_t`             | `write(uint8_t )`                                                                 | ✔️       | ✔️       | ✔️     |
 | `size_t`             | `write(uint8_t data)`                                                             | ✔️       | ✔️       | ✔️     |
 | `size_t`             | `write(const char * str)`                                                         | ✔️       | ✔️       | ✔️     |
-| `size_t`             | `write(const uint8_t * buf, size_t size)`                                         | ✔️       | ✔️       | ✔️     |
-| `size_t`             | `write(const uint8_t * data, size_t len)`                                         | ✔️       | ✔️       | ✔️     |
+| `size_t`             | `write(uint8_t )`                                                                 | ✔️       | ✔️       | ✔️     |
 | `size_t`             | `write(const uint8_t * buffer, size_t size)`                                      | ✔️       | ✔️       | ✔️     |
 | `size_t`             | `write(const char * buffer, size_t size)`                                         | ✔️       | ✔️       | ✔️     |
+| `size_t`             | `write(const uint8_t * buf, size_t size)`                                         | ✔️       | ✔️       | ✔️     |
+| `size_t`             | `write(const uint8_t * data, size_t len)`                                         | ✔️       | ✔️       | ✔️     |
 |                      | **Limited compatibility**                                                         |          |          |        |
 |                      | `WiFiServer(uint16_t port = 80, uint8_t max_clients = 4)`                         |          |          | ✔️     |
 |                      | `WiFiServer(const  &IPAddress addr, uint16_t port = 80, uint8_t max_clients = 4)` |          |          | ✔️     |
 | `WiFiClient`         | `accept()`                                                                        |          |          | ✔️     |
-| `WiFiClient`         | `available(uint8_t * status = NULL)`                                              | ✔️       | ✔️       |        |
 | `WiFiClient`         | `available(uint8_t * status = nullptr)`                                           | ✔️       | ✔️       |        |
+| `WiFiClient`         | `available(uint8_t * status = NULL)`                                              | ✔️       | ✔️       |        |
 | `size_t virtual int` | `availableForWrite()`                                                             |          | ✔️       | ✔️     |
 | `void`               | `begin(uint16_t port = 0)`                                                        |          |          | ✔️     |
 | `void`               | `begin(uint16_t port, int reuse_enable)`                                          |          |          | ✔️     |
@@ -410,36 +410,36 @@ This document compares the API of the following libraries:
 | `bool`               | `hasClient()`                                                                     |          |          | ✔️     |
 | `void`               | `listenOnLocalhost()`                                                             |          |          | ✔️     |
 |                      | `operator bool()`                                                                 |          |          | ✔️     |
-| `size_t`             | `print(const char )`                                                              |          | ✔️       | ✔️     |
-| `size_t`             | `print(const  &String )`                                                          |          | ✔️       | ✔️     |
 | `size_t`             | `print(const __FlashStringHelper * )`                                             |          | ✔️       | ✔️     |
-| `size_t`             | `print(char )`                                                                    |          | ✔️       | ✔️     |
 | `size_t`             | `print(const  &Printable )`                                                       |          | ✔️       | ✔️     |
-| `size_t`             | `print(double , int  = 2)`                                                        |          | ✔️       | ✔️     |
-| `size_t`             | `print(int , int  = 10)`                                                          |          | ✔️       | ✔️     |
+| `size_t`             | `print(char )`                                                                    |          | ✔️       | ✔️     |
+| `size_t`             | `print(const  &String )`                                                          |          | ✔️       | ✔️     |
+| `size_t`             | `print(const char )`                                                              |          | ✔️       | ✔️     |
 | `size_t`             | `print(struct tm * timeinfo, const char * format = NULL)`                         |          | ✔️       | ✔️     |
-| `size_t`             | `print(unsigned char , int  = 10)`                                                |          | ✔️       | ✔️     |
-| `size_t`             | `print(unsigned long long , int  = 10)`                                           |          | ✔️       | ✔️     |
-| `size_t`             | `print(long long , int  = 10)`                                                    |          | ✔️       | ✔️     |
+| `size_t`             | `print(double , int  = 2)`                                                        |          | ✔️       | ✔️     |
 | `size_t`             | `print(unsigned int , int  = 10)`                                                 |          | ✔️       | ✔️     |
+| `size_t`             | `print(int , int  = 10)`                                                          |          | ✔️       | ✔️     |
+| `size_t`             | `print(long long , int  = 10)`                                                    |          | ✔️       | ✔️     |
+| `size_t`             | `print(unsigned long long , int  = 10)`                                           |          | ✔️       | ✔️     |
 | `size_t`             | `print(unsigned long , int  = 10)`                                                |          | ✔️       | ✔️     |
+| `size_t`             | `print(unsigned char , int  = 10)`                                                |          | ✔️       | ✔️     |
 | `size_t`             | `print(long , int  = 10)`                                                         |          | ✔️       | ✔️     |
 | `size_t`             | `printf(const char * format, ... )`                                               |          |          | ✔️     |
 | `size_t`             | `println()`                                                                       |          | ✔️       | ✔️     |
 | `size_t`             | `println(const char )`                                                            |          | ✔️       | ✔️     |
 | `size_t`             | `println(const __FlashStringHelper * )`                                           |          | ✔️       | ✔️     |
-| `size_t`             | `println(char )`                                                                  |          | ✔️       | ✔️     |
 | `size_t`             | `println(const  &Printable )`                                                     |          | ✔️       | ✔️     |
+| `size_t`             | `println(char )`                                                                  |          | ✔️       | ✔️     |
 | `size_t`             | `println(const  &String s)`                                                       |          | ✔️       | ✔️     |
 | `size_t`             | `println(long long , int  = 10)`                                                  |          | ✔️       | ✔️     |
 | `size_t`             | `println(int , int  = 10)`                                                        |          | ✔️       | ✔️     |
-| `size_t`             | `println(unsigned char , int  = 10)`                                              |          | ✔️       | ✔️     |
-| `size_t`             | `println(unsigned long , int  = 10)`                                              |          | ✔️       | ✔️     |
-| `size_t`             | `println(struct tm * timeinfo, const char * format = NULL)`                       |          | ✔️       | ✔️     |
-| `size_t`             | `println(unsigned long long , int  = 10)`                                         |          | ✔️       | ✔️     |
-| `size_t`             | `println(double , int  = 2)`                                                      |          | ✔️       | ✔️     |
-| `size_t`             | `println(unsigned int , int  = 10)`                                               |          | ✔️       | ✔️     |
 | `size_t`             | `println(long , int  = 10)`                                                       |          | ✔️       | ✔️     |
+| `size_t`             | `println(struct tm * timeinfo, const char * format = NULL)`                       |          | ✔️       | ✔️     |
+| `size_t`             | `println(unsigned int , int  = 10)`                                               |          | ✔️       | ✔️     |
+| `size_t`             | `println(unsigned long , int  = 10)`                                              |          | ✔️       | ✔️     |
+| `size_t`             | `println(double , int  = 2)`                                                      |          | ✔️       | ✔️     |
+| `size_t`             | `println(unsigned char , int  = 10)`                                              |          | ✔️       | ✔️     |
+| `size_t`             | `println(unsigned long long , int  = 10)`                                         |          | ✔️       | ✔️     |
 | `void`               | `setNoDelay(bool nodelay)`                                                        |          |          | ✔️     |
 | `int`                | `setTimeout(uint32_t seconds)`                                                    |          |          | ✔️     |
 | `uint8_t`            | `status()`                                                                        | ✔️       | ✔️       |        |
@@ -452,12 +452,12 @@ This document compares the API of the following libraries:
 | -------------------- | --------------------------------------------------------------------------------------------- | -------- | -------- | ------ |
 |                      | **Fully compatible**                                                                          |          |          |        |
 | `int`                | `available()`                                                                                 | ✔️       | ✔️       | ✔️     |
-| `uint8_t`            | `begin(uint16_t )`                                                                            | ✔️       | ✔️       | ✔️     |
 | `uint8_t`            | `begin(uint16_t p)`                                                                           | ✔️       | ✔️       | ✔️     |
+| `uint8_t`            | `begin(uint16_t )`                                                                            | ✔️       | ✔️       | ✔️     |
 | `uint8_t`            | `beginMulticast(IPAddress a, uint16_t p)`                                                     | ✔️       | ✔️       | ✔️     |
 | `uint8_t`            | `beginMulticast(IPAddress , uint16_t )`                                                       | ✔️       | ✔️       | ✔️     |
-| `int`                | `beginPacket(const char * host, uint16_t port)`                                               | ✔️       | ✔️       | ✔️     |
 | `int`                | `beginPacket(IPAddress ip, uint16_t port)`                                                    | ✔️       | ✔️       | ✔️     |
+| `int`                | `beginPacket(const char * host, uint16_t port)`                                               | ✔️       | ✔️       | ✔️     |
 | `int`                | `endPacket()`                                                                                 | ✔️       | ✔️       | ✔️     |
 | `void`               | `flush()`                                                                                     | ✔️       | ✔️       | ✔️     |
 | `int`                | `parsePacket()`                                                                               | ✔️       | ✔️       | ✔️     |
@@ -468,10 +468,10 @@ This document compares the API of the following libraries:
 | `IPAddress`          | `remoteIP()`                                                                                  | ✔️       | ✔️       | ✔️     |
 | `uint16_t`           | `remotePort()`                                                                                | ✔️       | ✔️       | ✔️     |
 | `void`               | `stop()`                                                                                      | ✔️       | ✔️       | ✔️     |
-| `size_t`             | `write(uint8_t )`                                                                             | ✔️       | ✔️       | ✔️     |
 | `size_t`             | `write(const char * str)`                                                                     | ✔️       | ✔️       | ✔️     |
-| `size_t`             | `write(const char * buffer, size_t size)`                                                     | ✔️       | ✔️       | ✔️     |
+| `size_t`             | `write(uint8_t )`                                                                             | ✔️       | ✔️       | ✔️     |
 | `size_t`             | `write(const uint8_t * buffer, size_t size)`                                                  | ✔️       | ✔️       | ✔️     |
+| `size_t`             | `write(const char * buffer, size_t size)`                                                     | ✔️       | ✔️       | ✔️     |
 |                      | **Limited compatibility**                                                                     |          |          |        |
 |                      | `WiFiUDP()`                                                                                   | ✔️       |          | ✔️     |
 | `size_t virtual int` | `availableForWrite()`                                                                         |          | ✔️       | ✔️     |
@@ -479,59 +479,59 @@ This document compares the API of the following libraries:
 | `int`                | `beginMulticastPacket()`                                                                      |          |          | ✔️     |
 | `int`                | `beginPacket()`                                                                               |          |          | ✔️     |
 | `void`               | `clearWriteError()`                                                                           |          | ✔️       | ✔️     |
-| `bool`               | `find(uint8_t * target)`                                                                      |          | ✔️       | ✔️     |
-| `bool`               | `find(const char * target)`                                                                   |          | ✔️       | ✔️     |
 | `bool`               | `find(const uint8_t * target)`                                                                |          | ✔️       | ✔️     |
 | `bool`               | `find(char target)`                                                                           |          | ✔️       | ✔️     |
+| `bool`               | `find(uint8_t * target)`                                                                      |          | ✔️       | ✔️     |
+| `bool`               | `find(const char * target)`                                                                   |          | ✔️       | ✔️     |
 | `bool`               | `find(const uint8_t * target, size_t length)`                                                 |          | ✔️       | ✔️     |
 | `bool`               | `find(const char * target, size_t length)`                                                    |          | ✔️       | ✔️     |
 | `bool`               | `findUntil(const char * target, const char * terminator)`                                     |          | ✔️       | ✔️     |
 | `bool`               | `findUntil(const uint8_t * target, const char * terminator)`                                  |          | ✔️       | ✔️     |
-| `bool`               | `findUntil(const char * target, size_t targetLen, const char * terminate, size_t termLen)`    |          | ✔️       | ✔️     |
 | `bool`               | `findUntil(const uint8_t * target, size_t targetLen, const char * terminate, size_t termLen)` |          | ✔️       | ✔️     |
+| `bool`               | `findUntil(const char * target, size_t targetLen, const char * terminate, size_t termLen)`    |          | ✔️       | ✔️     |
 | `unsigned long`      | `getTimeout()`                                                                                |          | ✔️       | ✔️     |
 | `int`                | `getWriteError()`                                                                             |          | ✔️       | ✔️     |
 | `float`              | `parseFloat()`                                                                                |          |          | ✔️     |
 | `float`              | `parseFloat(LookaheadMode lookahead, char ignore = '\x01')`                                   |          | ✔️       |        |
 | `long`               | `parseInt()`                                                                                  |          |          | ✔️     |
 | `long`               | `parseInt(LookaheadMode lookahead, char ignore = '\x01')`                                     |          | ✔️       |        |
-| `size_t`             | `print(const  &String )`                                                                      |          | ✔️       | ✔️     |
-| `size_t`             | `print(const char )`                                                                          |          | ✔️       | ✔️     |
-| `size_t`             | `print(const __FlashStringHelper * )`                                                         |          | ✔️       | ✔️     |
 | `size_t`             | `print(char )`                                                                                |          | ✔️       | ✔️     |
+| `size_t`             | `print(const  &String )`                                                                      |          | ✔️       | ✔️     |
 | `size_t`             | `print(const  &Printable )`                                                                   |          | ✔️       | ✔️     |
-| `size_t`             | `print(int , int  = 10)`                                                                      |          | ✔️       | ✔️     |
-| `size_t`             | `print(double , int  = 2)`                                                                    |          | ✔️       | ✔️     |
-| `size_t`             | `print(unsigned int , int  = 10)`                                                             |          | ✔️       | ✔️     |
+| `size_t`             | `print(const __FlashStringHelper * )`                                                         |          | ✔️       | ✔️     |
+| `size_t`             | `print(const char )`                                                                          |          | ✔️       | ✔️     |
 | `size_t`             | `print(unsigned long , int  = 10)`                                                            |          | ✔️       | ✔️     |
-| `size_t`             | `print(long long , int  = 10)`                                                                |          | ✔️       | ✔️     |
-| `size_t`             | `print(unsigned long long , int  = 10)`                                                       |          | ✔️       | ✔️     |
-| `size_t`             | `print(struct tm * timeinfo, const char * format = NULL)`                                     |          | ✔️       | ✔️     |
+| `size_t`             | `print(int , int  = 10)`                                                                      |          | ✔️       | ✔️     |
 | `size_t`             | `print(unsigned char , int  = 10)`                                                            |          | ✔️       | ✔️     |
+| `size_t`             | `print(struct tm * timeinfo, const char * format = NULL)`                                     |          | ✔️       | ✔️     |
+| `size_t`             | `print(long long , int  = 10)`                                                                |          | ✔️       | ✔️     |
+| `size_t`             | `print(unsigned int , int  = 10)`                                                             |          | ✔️       | ✔️     |
+| `size_t`             | `print(unsigned long long , int  = 10)`                                                       |          | ✔️       | ✔️     |
+| `size_t`             | `print(double , int  = 2)`                                                                    |          | ✔️       | ✔️     |
 | `size_t`             | `print(long , int  = 10)`                                                                     |          | ✔️       | ✔️     |
 | `size_t`             | `printf(const char * format, ... )`                                                           |          |          | ✔️     |
 | `size_t`             | `println()`                                                                                   |          | ✔️       | ✔️     |
-| `size_t`             | `println(const __FlashStringHelper * )`                                                       |          | ✔️       | ✔️     |
-| `size_t`             | `println(const char )`                                                                        |          | ✔️       | ✔️     |
-| `size_t`             | `println(char )`                                                                              |          | ✔️       | ✔️     |
 | `size_t`             | `println(const  &String s)`                                                                   |          | ✔️       | ✔️     |
+| `size_t`             | `println(char )`                                                                              |          | ✔️       | ✔️     |
+| `size_t`             | `println(const char )`                                                                        |          | ✔️       | ✔️     |
+| `size_t`             | `println(const __FlashStringHelper * )`                                                       |          | ✔️       | ✔️     |
 | `size_t`             | `println(const  &Printable )`                                                                 |          | ✔️       | ✔️     |
-| `size_t`             | `println(int , int  = 10)`                                                                    |          | ✔️       | ✔️     |
-| `size_t`             | `println(long long , int  = 10)`                                                              |          | ✔️       | ✔️     |
-| `size_t`             | `println(unsigned char , int  = 10)`                                                          |          | ✔️       | ✔️     |
+| `size_t`             | `println(unsigned long long , int  = 10)`                                                     |          | ✔️       | ✔️     |
 | `size_t`             | `println(unsigned long , int  = 10)`                                                          |          | ✔️       | ✔️     |
+| `size_t`             | `println(unsigned int , int  = 10)`                                                           |          | ✔️       | ✔️     |
 | `size_t`             | `println(struct tm * timeinfo, const char * format = NULL)`                                   |          | ✔️       | ✔️     |
+| `size_t`             | `println(int , int  = 10)`                                                                    |          | ✔️       | ✔️     |
 | `size_t`             | `println(long , int  = 10)`                                                                   |          | ✔️       | ✔️     |
 | `size_t`             | `println(double , int  = 2)`                                                                  |          | ✔️       | ✔️     |
-| `size_t`             | `println(unsigned long long , int  = 10)`                                                     |          | ✔️       | ✔️     |
-| `size_t`             | `println(unsigned int , int  = 10)`                                                           |          | ✔️       | ✔️     |
-| `size_t`             | `readBytes(char * buffer, size_t length)`                                                     |          | ✔️       | ✔️     |
+| `size_t`             | `println(unsigned char , int  = 10)`                                                          |          | ✔️       | ✔️     |
+| `size_t`             | `println(long long , int  = 10)`                                                              |          | ✔️       | ✔️     |
 | `size_t`             | `readBytes(uint8_t * buffer, size_t length)`                                                  |          | ✔️       | ✔️     |
-| `size_t`             | `readBytesUntil(char terminator, char * buffer, size_t length)`                               |          | ✔️       | ✔️     |
+| `size_t`             | `readBytes(char * buffer, size_t length)`                                                     |          | ✔️       | ✔️     |
 | `size_t`             | `readBytesUntil(char terminator, uint8_t * buffer, size_t length)`                            |          | ✔️       | ✔️     |
+| `size_t`             | `readBytesUntil(char terminator, char * buffer, size_t length)`                               |          | ✔️       | ✔️     |
 | `String`             | `readString()`                                                                                |          | ✔️       | ✔️     |
 | `String`             | `readStringUntil(char terminator)`                                                            |          | ✔️       | ✔️     |
 | `void`               | `setTimeout(unsigned long timeout)`                                                           |          | ✔️       | ✔️     |
 
-_Generated on Mon, 13 Feb 2023 10:14:36 UTC with [cpp-api-compare](https://github.com/alranel/cpp-api-compare)._
+_Generated on Mon, 13 Feb 2023 11:12:00 UTC with [cpp-api-compare](https://github.com/alranel/cpp-api-compare)._
 
